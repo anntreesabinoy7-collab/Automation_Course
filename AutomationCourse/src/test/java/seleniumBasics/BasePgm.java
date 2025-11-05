@@ -14,7 +14,7 @@ public class BasePgm {
 	
 	public void browserCloseAndQuit() {
 		//driver.close();
-		driver.quit();
+		//driver.quit();
 	}
 	
   public static void main(String arg[]) {
