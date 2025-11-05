@@ -8,7 +8,7 @@ public class HandlingLocators extends BasePgm{
 		 driver.findElement(By.id("button-one"));
 		 driver.findElement(By.tagName("button"));
 		 driver.findElement(By.className("btn btn-primary"));
-		 driver.findElement(By.name(""));
+		 driver.findElement(By.name("viewport"));
 		 driver.findElement(By.linkText("Ajax Form Submission"));
 		 driver.findElement(By.partialLinkText("Ajax"));
 	 }
