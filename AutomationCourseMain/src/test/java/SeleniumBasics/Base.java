@@ -1,9 +1,9 @@
-package seleniumBasics;
+package SeleniumBasics;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class BasePgm {
+public class Base {
 	public WebDriver driver;
 	
 	public void initializeBrowser() {
@@ -11,15 +11,14 @@ public class BasePgm {
 		driver.get("https://selenium.qabible.in/");
 		driver.manage().window().maximize();
 	}
-	
-	public void browserCloseAndQuit() {
+	public void browserQuitAndClose() {
 		//driver.close();
 		//driver.quit();
 	}
-	
-  public static void main(String arg[]) {
-	  BasePgm base = new BasePgm();
-	  base.initializeBrowser();
-	  base.browserCloseAndQuit();
-  }
+	public static void main(String arg[]) {
+		Base base = new Base();
+		base.initializeBrowser();
+		base.browserQuitAndClose();
+	}
+
 }

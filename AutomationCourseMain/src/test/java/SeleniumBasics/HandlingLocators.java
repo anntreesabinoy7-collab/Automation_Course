@@ -1,9 +1,9 @@
-package seleniumBasics;
+package SeleniumBasics;
 
 import org.openqa.selenium.By;
 
-public class HandlingLocators extends BasePgm{
-	 public void verifyLocator() {
+public class HandlingLocators extends Base{
+	public void verifyLocator() {
 		 driver.navigate().to("https://selenium.qabible.in/simple-form-demo.php");
 		 driver.findElement(By.id("button-one"));
 		 driver.findElement(By.tagName("button"));
@@ -16,6 +16,11 @@ public class HandlingLocators extends BasePgm{
 		 driver.findElement(By.xpath("//button[text()='Show Message']"));
 		 driver.findElement(By.xpath("//button[@id='button-one' and @type='button']"));
 		 driver.findElement(By.xpath("//button[@id='button-one' or @id='button-one-electronics']"));
+		 driver.findElement(By.xpath("//div[contains (text(), 'Single Input Field')]//parent::div[@class='card']"));
+		 driver.findElement(By.xpath("/div[@class='card']//child::button[@id='button-one']"));
+		 driver.findElement(By.xpath("//button[@id='button-one']//following::div[@class='card']"));
+		 driver.findElement(By.xpath("//button[@id='button-one']//preceding:: div[@class='card']"));
+		 driver.findElement(By.xpath("//button[@id='button-one']//ancestor::div"));
 	 }
 
 	public static void main(String[] args) {
@@ -24,7 +29,3 @@ public class HandlingLocators extends BasePgm{
 	}
 
 }
-
-
-///html/body/section/div
-///html/body/section/div/div/div[2]/div[1]/div/div[2]/form/button
