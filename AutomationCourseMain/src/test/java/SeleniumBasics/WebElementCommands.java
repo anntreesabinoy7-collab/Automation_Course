@@ -10,6 +10,13 @@ public class WebElementCommands extends Base {
 		textbox.sendKeys("Ann Treesa Binoy");
 		WebElement showmessagebutton = driver.findElement(By.id("button-one"));
 		showmessagebutton.click();
+		System.out.println(showmessagebutton.isDisplayed());
+		System.out.println(showmessagebutton.isEnabled());
+		WebElement text = driver.findElement(By.id("message-one"));
+		System.out.println(text.getText());
+		System.out.println(text.getTagName());
+		textbox.clear();
+		System.out.println(showmessagebutton.getCssValue("background-color"));
 	}
 
 	public static void main(String[] args) {
