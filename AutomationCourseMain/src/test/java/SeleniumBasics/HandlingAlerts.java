@@ -18,7 +18,15 @@ public class HandlingAlerts extends Base{
 		confirmAlert.click();
 		Alert al = driver.switchTo().alert();
 		al.dismiss();
-
+	}
+	public void promptAlert() {
+		driver.navigate().to("https://demoqa.com/alerts");
+        WebElement promptAlert =  driver.findElement(By.id("promtButton"));
+        promptAlert.click();
+        Alert al = driver.switchTo().alert();
+        al.sendKeys("Ann Treesa Binoy");
+        al.accept();
+        
 		
 	}
 
@@ -26,7 +34,8 @@ public class HandlingAlerts extends Base{
 		HandlingAlerts alert = new HandlingAlerts();
 		alert.initializeBrowser();
 		//alert.simpleAlert();
-		alert.confirmAlert();
+		//alert.confirmAlert();
+		alert.promptAlert();
 		
 	}
 
