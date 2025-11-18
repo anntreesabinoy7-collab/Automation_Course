@@ -17,7 +17,7 @@ public class HandlingFrames extends Base{
 		WebElement framename = driver.findElement(By.id("sampleHeading")); // frame nte heading.
 		System.out.println(framename.getText());
 		
-		driver.switchTo().defaultContent(); //control thirich webpage il
+		driver.switchTo().defaultContent(); //cntrl thirich webpage il
 	}
 	public static void main(String arg[]) {
 		HandlingFrames frames = new HandlingFrames();
