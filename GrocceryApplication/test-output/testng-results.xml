@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-26T23:23:07 IST" name="Default suite" finished-at="2025-11-26T23:23:10 IST" duration-ms="2730">
+  <suite started-at="2025-11-26T23:24:47 IST" name="Default suite" finished-at="2025-11-26T23:24:49 IST" duration-ms="2619">
     <groups>
     </groups>
-    <test started-at="2025-11-26T23:23:07 IST" name="Default test" finished-at="2025-11-26T23:23:10 IST" duration-ms="2730">
-      <class name="TestScripts.LoginTest">
-        <test-method is-config="true" signature="initializeBrowser()[pri:0, instance:TestScripts.LoginTest@7cc0cdad]" started-at="2025-11-26T23:23:07 IST" name="initializeBrowser" finished-at="2025-11-26T23:23:10 IST" duration-ms="2627" status="PASS">
+    <test started-at="2025-11-26T23:24:47 IST" name="Default test" finished-at="2025-11-26T23:24:49 IST" duration-ms="2619">
+      <class name="testScripts.LoginTest">
+        <test-method is-config="true" signature="initializeBrowser()[pri:0, instance:testScripts.LoginTest@7cc0cdad]" started-at="2025-11-26T23:24:47 IST" name="initializeBrowser" finished-at="2025-11-26T23:24:49 IST" duration-ms="2532" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeBrowser -->
-        <test-method signature="VerifyWhetherTheUserIsAbleToLoginWithValidCredential()[pri:0, instance:TestScripts.LoginTest@7cc0cdad]" started-at="2025-11-26T23:23:10 IST" name="VerifyWhetherTheUserIsAbleToLoginWithValidCredential" finished-at="2025-11-26T23:23:10 IST" duration-ms="31" status="FAIL">
+        <test-method signature="VerifyWhetherTheUserIsAbleToLoginWithValidUsernameAndInvalidPssword()[pri:0, instance:testScripts.LoginTest@7cc0cdad]" started-at="2025-11-26T23:24:49 IST" name="VerifyWhetherTheUserIsAbleToLoginWithValidUsernameAndInvalidPssword" finished-at="2025-11-26T23:24:49 IST" duration-ms="26" status="FAIL">
           <exception class="java.io.FileNotFoundException">
             <message>
               <![CDATA[C:\Users\User\git\Automation_Course\AutomationCourseMain\src\test\resources\loginPage.xlsx (The system cannot find the file specified)]]>
@@ -23,7 +23,7 @@ at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
 at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
 at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
 at Utility.ExcelUtility.getStringData(ExcelUtility.java:18)
-at TestScripts.LoginTest.VerifyWhetherTheUserIsAbleToLoginWithValidCredential(LoginTest.java:18)
+at testScripts.LoginTest.VerifyWhetherTheUserIsAbleToLoginWithValidUsernameAndInvalidPssword(LoginTest.java:25)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -55,12 +55,12 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- java.io.FileNotFoundException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyWhetherTheUserIsAbleToLoginWithValidCredential -->
-        <test-method is-config="true" signature="browserQuitAndClose()[pri:0, instance:TestScripts.LoginTest@7cc0cdad]" started-at="2025-11-26T23:23:10 IST" name="browserQuitAndClose" finished-at="2025-11-26T23:23:10 IST" duration-ms="0" status="PASS">
+        </test-method> <!-- VerifyWhetherTheUserIsAbleToLoginWithValidUsernameAndInvalidPssword -->
+        <test-method is-config="true" signature="browserQuitAndClose()[pri:0, instance:testScripts.LoginTest@7cc0cdad]" started-at="2025-11-26T23:24:49 IST" name="browserQuitAndClose" finished-at="2025-11-26T23:24:49 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserQuitAndClose -->
-      </class> <!-- TestScripts.LoginTest -->
+      </class> <!-- testScripts.LoginTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
