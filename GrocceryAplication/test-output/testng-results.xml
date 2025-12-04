@@ -2,28 +2,26 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-01T23:41:17 IST" name="Default suite" finished-at="2025-12-01T23:41:22 IST" duration-ms="4286">
+  <suite started-at="2025-12-04T17:50:26 IST" name="Default suite" finished-at="2025-12-04T17:50:34 IST" duration-ms="7412">
     <groups>
     </groups>
-    <test started-at="2025-12-01T23:41:17 IST" name="Default test" finished-at="2025-12-01T23:41:22 IST" duration-ms="4286">
-      <class name="TestScripts.LoginTest">
-        <test-method is-config="true" signature="initializeBrowser()[pri:0, instance:TestScripts.LoginTest@7cc0cdad]" started-at="2025-12-01T23:41:17 IST" name="initializeBrowser" finished-at="2025-12-01T23:41:22 IST" duration-ms="4159" status="PASS">
+    <test started-at="2025-12-04T17:50:26 IST" name="Default test" finished-at="2025-12-04T17:50:34 IST" duration-ms="7412">
+      <class name="testScripts.AdminUsersTest">
+        <test-method is-config="true" signature="initializeBrowser()[pri:0, instance:testScripts.AdminUsersTest@459e9125]" started-at="2025-12-04T17:50:26 IST" name="initializeBrowser" finished-at="2025-12-04T17:50:29 IST" duration-ms="3013" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeBrowser -->
-        <test-method signature="VerifyWhetherTheUserIsAbleToLoginWithValidCredential()[pri:0, instance:TestScripts.LoginTest@7cc0cdad]" started-at="2025-12-01T23:41:22 IST" name="VerifyWhetherTheUserIsAbleToLoginWithValidCredential" finished-at="2025-12-01T23:41:22 IST" duration-ms="23" status="FAIL">
-          <exception class="java.io.FileNotFoundException">
+        <test-method signature="verifyWhetherUserIsAbleToAddNewUser()[pri:0, instance:testScripts.AdminUsersTest@459e9125]" started-at="2025-12-04T17:50:29 IST" name="verifyWhetherUserIsAbleToAddNewUser" finished-at="2025-12-04T17:50:33 IST" duration-ms="4111" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[C:\Users\User\git\Automation_Course\AutomationCourseMain\src\test\resources\loginPage.xlsx (The system cannot find the file specified)]]>
+              <![CDATA[User was NOT added! expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.io.FileNotFoundException: C:\Users\User\git\Automation_Course\AutomationCourseMain\src\test\resources\loginPage.xlsx (The system cannot find the file specified)
-at java.base/java.io.FileInputStream.open0(Native Method)
-at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
-at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
-at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
-at Utility.ExcelUtility.getStringData(ExcelUtility.java:18)
-at TestScripts.LoginTest.VerifyWhetherTheUserIsAbleToLoginWithValidCredential(LoginTest.java:18)
+              <![CDATA[java.lang.AssertionError: User was NOT added! expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at testScripts.AdminUsersTest.verifyWhetherUserIsAbleToAddNewUser(AdminUsersTest.java:35)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -52,15 +50,22 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.io.FileNotFoundException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyWhetherTheUserIsAbleToLoginWithValidCredential -->
-        <test-method is-config="true" signature="browserQuitAndClose()[pri:0, instance:TestScripts.LoginTest@7cc0cdad]" started-at="2025-12-01T23:41:22 IST" name="browserQuitAndClose" finished-at="2025-12-01T23:41:22 IST" duration-ms="2" status="PASS">
+        </test-method> <!-- verifyWhetherUserIsAbleToAddNewUser -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testScripts.AdminUsersTest@459e9125]" started-at="2025-12-04T17:50:33 IST" name="driverQuit" finished-at="2025-12-04T17:50:34 IST" duration-ms="223" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyWhetherUserIsAbleToAddNewUser status=FAILURE method=AdminUsersTest.verifyWhetherUserIsAbleToAddNewUser()[pri:0, instance:testScripts.AdminUsersTest@459e9125] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- browserQuitAndClose -->
-      </class> <!-- TestScripts.LoginTest -->
+        </test-method> <!-- driverQuit -->
+      </class> <!-- testScripts.AdminUsersTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
