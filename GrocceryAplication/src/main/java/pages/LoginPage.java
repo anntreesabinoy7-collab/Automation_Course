@@ -16,10 +16,13 @@ public WebDriver driver;
 	@FindBy(xpath ="//input[@name='password']") WebElement password;
 	@FindBy(xpath = "//button[text()='Sign In']") WebElement loginbutton;
 	@FindBy(xpath ="//p[text()='Dashboard']") WebElement dashboard;
-	@FindBy(xpath = "//b[text ()= '7rmart supermarket']") WebElement title;
+	@FindBy(xpath = "//b[text()= '7rmart supermarket']") WebElement title;
+    @FindBy(xpath = "//h5[text()=\" Alert!\"]") WebElement alert;
+	@FindBy(xpath = "//div[@class='alert alert-danger alert-dismissible']") WebElement dashboard2;
+	@FindBy(xpath = "//button[@class='close']") WebElement closebutton;
 	
 	
-	
+	//h5[text()=" Alert!"]
 	
 	public void enterUserNameOnUserNameField(String usernamevalue) {
 		userName.sendKeys(usernamevalue);
@@ -39,5 +42,15 @@ public WebDriver driver;
 		return title.getText();
 	}
 	
-
+	public String isAlertDisplayed() {
+		return alert.getText();
+	}
+	
+    public boolean isdashboard2Displayed() {
+    	return dashboard2.isDisplayed();
+    }
+    
+    public boolean isclosebuttondisplayed() {
+    	return closebutton.isDisplayed();
+    }
 }

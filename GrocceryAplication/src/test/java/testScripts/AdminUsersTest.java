@@ -10,6 +10,7 @@ import pages.AdminUsersPage;
 import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
+import utilities.FakerUtility;
 
 public class AdminUsersTest extends Base{
 	@Test
@@ -22,17 +23,20 @@ public class AdminUsersTest extends Base{
 			loginPage.loginButtonClick();
 		 HomePage homepage = new HomePage(driver);
 		    homepage.moreInfoButtonClick();
-	
-		 String usernamevalue1=ExcelUtility.getStringData(0, 0, "AdminUsersPage");
-		 String passwordvalue1=ExcelUtility.getStringData(0, 1, "AdminUsersPage");
+		    
+		 FakerUtility fakerUtility = new FakerUtility();
+		 String usernamevalue1=fakerUtility.createRandomUserName();
+		 String passwordvalue1=fakerUtility.createRandomPassword();
+		 
 		 AdminUsersPage   adminuserspage = new AdminUsersPage(driver);
 		    adminuserspage.newButtonClick();
 		    adminuserspage.enterUserNameOnUserNameField(usernamevalue1);
 		    adminuserspage.enterPasswordOnPasswordField(passwordvalue1);
 		    adminuserspage.selectUserType();
 		    adminuserspage.saveButtonClick();
-		    String Alertmsg = adminuserspage.getAlertMessage();
-		    Assert.assertTrue(Alertmsg.contains("User Added Successfully"), "User was NOT added!");
+		    
+		    boolean Alertmsg = adminuserspage.getAlertMessage();
+		    Assert.assertTrue(Alertmsg, "User was NOT added!");
 
 		}
 		    
@@ -58,9 +62,9 @@ public class AdminUsersTest extends Base{
 	        adminuserspage.searchUserTypeButton();
 	        adminuserspage.submitButtonClick();
 	        
-	        String expecteduser = " Ann Treesa Binoy ";
-	        String actualuser = adminuserspage.getSearchedUser();
-            Assert.assertEquals(actualuser, expecteduser, "Searched user does NOT match!");
+	        String expecteduser = "Ann Treesa Binoy";
+	        String actualuser = adminuserspage.getSearchedUser().trim();
+            Assert.assertEquals(expecteduser, actualuser, "Searched user does NOT match!");
 
 		}
 	@Test
@@ -78,7 +82,9 @@ public class AdminUsersTest extends Base{
 		  
 		AdminUsersPage   adminuserspage = new AdminUsersPage(driver);
 		     adminuserspage.resetButtonClick();
-
+        
+	    boolean adminUsersListDisplayed=adminuserspage.isAdminUsersListDisplayed();
+		     Assert.assertTrue(adminUsersListDisplayed,"user list is not reset.");
 	}
 
 }

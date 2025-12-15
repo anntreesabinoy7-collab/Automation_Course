@@ -22,8 +22,8 @@ public class HomeTest extends Base {
 		HomePage homepage = new HomePage(driver);
 		    homepage.logoutButtonClick();
 		    homepage.logoutClick();
-			boolean dashboardIsDisplayed = loginPage.isDashboardDisplayed();
-			Assert.assertTrue(dashboardIsDisplayed, "User was unable to login with valid credentials");
+			boolean signInIsDisplayed = homepage.isSignInDisplayed();
+			Assert.assertTrue(signInIsDisplayed, "User was unable to LogOut Successfully");
 		}
 
 }

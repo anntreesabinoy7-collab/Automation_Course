@@ -17,7 +17,9 @@ public WebDriver driver;
 	@FindBy(xpath = "//button[text()='Sign In']") WebElement loginbutton;
     @FindBy(xpath = "//a[@data-toggle='dropdown']") WebElement logoutbutton;
     @FindBy(xpath ="//a[@class='dropdown-item' and normalize-space()='Logout']") WebElement logout;
+    @FindBy(xpath ="//button[text()=\"Sign In\"]") WebElement signin;
     @FindBy(xpath ="//a[@class='small-box-footer' and @href='https://groceryapp.uniqassosiates.com/admin/list-admin']") WebElement moreinfo;
+	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news']") WebElement moreinfobutton;
 
 
 
@@ -30,9 +32,18 @@ public WebDriver driver;
     	logout.click();
     }
     
+    public boolean isSignInDisplayed() {
+		return signin.isDisplayed();
+    	
+    }
+    
     public void moreInfoButtonClick() {
     	moreinfo.click();
     }
+    
+    public void manageNewsButtonClick() {
+		moreinfobutton.click();
+	}
 
 
 }
