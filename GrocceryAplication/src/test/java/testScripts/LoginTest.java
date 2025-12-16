@@ -3,9 +3,11 @@ package testScripts;
 import java.io.IOException;
 
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
+import constant.Constants;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
@@ -19,7 +21,7 @@ public class LoginTest extends Base {
 			loginPage.enterPasswordOnPasswordField(passwordvalue);
 			loginPage.loginButtonClick();
 			boolean dashboardIsDisplayed = loginPage.isDashboardDisplayed();
-			Assert.assertTrue(dashboardIsDisplayed, "User was unable to login with valid credentials");
+			Assert.assertTrue(dashboardIsDisplayed,Constants.VALIDCREDENTIALSERROR);
 		}
 	 @Test(priority = 2,description = "Verify user can login with valid username and invalid password")
 	 public void verifyWhetherUserIsAbleToLoginWithValidUsernameAndInvalidPassword() throws IOException {
@@ -48,10 +50,10 @@ public class LoginTest extends Base {
 			Assert.assertTrue(CloseButtonDisplayed, "User was able to login with invalid username");
 			}
 	 
-	 @Test(priority = 4,description = "Verify user can login with invalid username and invalid password",groups = {"smoke"})
-		public void verifyWhetherUserIsAbleToLoginWithInvalidUsernameAndInvalidPassword() throws IOException {
-		 String usernamevalue=ExcelUtility.getStringData(3, 0, "Loginpage");
-		 String passwordvalue=ExcelUtility.getStringData(3, 1, "Loginpage");
+	 @Test(priority = 4,description = "Verify user can login with invalid username and invalid password",groups = {"smoke"},dataProvider = "loginProvider")
+		public void verifyWhetherUserIsAbleToLoginWithInvalidUsernameAndInvalidPassword(String usernamevalue,String passwordvalue) throws IOException {
+		 //String usernamevalue=ExcelUtility.getStringData(3, 0, "Loginpage");
+		 //String passwordvalue=ExcelUtility.getStringData(3, 1, "Loginpage");
 		 LoginPage loginPage=new LoginPage(driver);
 			loginPage.enterUserNameOnUserNameField(usernamevalue);
 			loginPage.enterPasswordOnPasswordField(passwordvalue);
@@ -60,5 +62,13 @@ public class LoginTest extends Base {
 			Assert.assertTrue(dashboard2IsDisplayed, "User was able to login with invalid credentials");
 			
 		}
+	 @DataProvider(name = "loginProvider")
+		public Object[][] getDataFromDataProvider() throws IOException {
 
+			return new Object[][] { new Object[] { "admin", "admin22" }, new Object[] { "admin123", "123" },
+					// new Object[] {ExcelUtility.getStringData(3,
+					// 0,"Login"),ExcelUtility.getStringData(3,1 ,"Login")}
+			};
+
+	 }
 }
