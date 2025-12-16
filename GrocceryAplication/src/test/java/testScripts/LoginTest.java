@@ -34,7 +34,7 @@ public class LoginTest extends Base {
 			
 			String expected ="Alert!";
 			String actual = loginPage.isAlertDisplayed();
-			Assert.assertEquals(expected, actual,"User was able to login with invalid password");
+			Assert.assertEquals(expected, actual,Constants.VALIDUSERNAMEANDINVALIDPASSWORD);
 			
 	 }
 	 @Test(priority = 3,description = "Verify user can loging with invalid username and valid password")
@@ -47,7 +47,7 @@ public class LoginTest extends Base {
 			loginPage.loginButtonClick();
 			
 			boolean CloseButtonDisplayed=loginPage.isclosebuttondisplayed();
-			Assert.assertTrue(CloseButtonDisplayed, "User was able to login with invalid username");
+			Assert.assertTrue(CloseButtonDisplayed,Constants.INVALIDUSERNAMEANDVALIDPASSWORD);
 			}
 	 
 	 @Test(priority = 4,description = "Verify user can login with invalid username and invalid password",groups = {"smoke"},dataProvider = "loginProvider")
@@ -59,7 +59,7 @@ public class LoginTest extends Base {
 			loginPage.enterPasswordOnPasswordField(passwordvalue);
 			loginPage.loginButtonClick();
 			boolean dashboard2IsDisplayed = loginPage.isdashboard2Displayed();
-			Assert.assertTrue(dashboard2IsDisplayed, "User was able to login with invalid credentials");
+			Assert.assertTrue(dashboard2IsDisplayed, Constants.INVALIDCREDENTIALSERROR);
 			
 		}
 	 @DataProvider(name = "loginProvider")

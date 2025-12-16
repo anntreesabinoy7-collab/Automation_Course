@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
+import constant.Constants;
 import pages.AdminUsersPage;
 import pages.HomePage;
 import pages.LoginPage;
@@ -36,7 +37,7 @@ public class AdminUsersTest extends Base{
 		    adminuserspage.saveButtonClick();
 		    
 		    boolean Alertmsg = adminuserspage.getAlertMessage();
-		    Assert.assertTrue(Alertmsg, "User was NOT added!");
+		    Assert.assertTrue(Alertmsg,Constants.ADDNEWUSERERROR);
 
 		}
 		    
@@ -64,7 +65,7 @@ public class AdminUsersTest extends Base{
 	        
 	        String expecteduser = "Ann Treesa Binoy";
 	        String actualuser = adminuserspage.getSearchedUser().trim();
-            Assert.assertEquals(expecteduser, actualuser, "Searched user does NOT match!");
+            Assert.assertEquals(expecteduser, actualuser, Constants.SEARCHNEWUSERERROR);
 
 		}
 	@Test
@@ -84,7 +85,7 @@ public class AdminUsersTest extends Base{
 		     adminuserspage.resetButtonClick();
         
 	    boolean adminUsersListDisplayed=adminuserspage.isAdminUsersListDisplayed();
-		     Assert.assertTrue(adminUsersListDisplayed,"user list is not reset.");
+		     Assert.assertTrue(adminUsersListDisplayed,Constants.RESETERROR);
 	}
 
 }

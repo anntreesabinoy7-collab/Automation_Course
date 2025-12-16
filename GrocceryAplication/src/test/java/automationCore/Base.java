@@ -15,7 +15,7 @@ import constant.Constants;
 import utilities.ScreenshotUtility;
 
 public class Base {
-	Properties prop;
+	Properties prop; //diclared globally for use everywhere.
 	FileInputStream f; 
 	public WebDriver driver;
 	@BeforeMethod

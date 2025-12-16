@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
+import constant.Constants;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.ManageNewsPage;
@@ -30,7 +31,7 @@ public class ManageNewsTest extends Base{
 		    managenewspage.saveButtonClick();
 		    
 		    boolean alertIsDisplayed = managenewspage.isAlertDisplayed();
-			Assert.assertTrue(alertIsDisplayed, "Alert is Not Found");
+			Assert.assertTrue(alertIsDisplayed,Constants.ADDNEWSERROR);
 
 }
 	@Test
@@ -52,7 +53,7 @@ public class ManageNewsTest extends Base{
 	     
 	     String expected = "Election 2025";
 	     String actual = managenewspage.getTheResult();
-	     Assert.assertEquals(actual, expected, "Search result does not match expected news title");
+	     Assert.assertEquals(actual, expected, Constants.ADDNEWSERROR);
    
 		
 	}
