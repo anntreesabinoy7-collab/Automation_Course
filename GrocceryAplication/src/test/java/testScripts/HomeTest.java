@@ -12,18 +12,20 @@ import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class HomeTest extends Base {
+	LoginPage login;
+	HomePage home;
 	@Test
 	public void verifyWhetherUserIsAbleToLogoutSuccessfully() throws IOException {
 		 String usernamevalue=ExcelUtility.getStringData(0, 0, "Loginpage");
 		 String passwordvalue=ExcelUtility.getStringData(0, 1, "Loginpage");
-		 LoginPage loginPage=new LoginPage(driver);
-			loginPage.enterUserNameOnUserNameField(usernamevalue);
-			loginPage.enterPasswordOnPasswordField(passwordvalue);
-			loginPage.loginButtonClick();
-		HomePage homepage = new HomePage(driver);
-		    homepage.logoutButtonClick();
-		    homepage.logoutClick();
-			boolean signInIsDisplayed = homepage.isSignInDisplayed();
+		 LoginPage login=new LoginPage(driver);
+
+		 login.enterUserNameOnUserNameField(usernamevalue).enterPasswordOnPasswordField(passwordvalue);
+		 home=login.loginButtonClick();
+			
+		    home.logoutButtonClick();
+		    login=home.logoutClick();
+			boolean signInIsDisplayed = home.isSignInDisplayed();
 			Assert.assertTrue(signInIsDisplayed, Constants.LOGOUTERROR);
 		}
 

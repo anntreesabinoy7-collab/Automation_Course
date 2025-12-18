@@ -5,8 +5,7 @@
   <test thread-count="5" name="Test">
     <classes>
       
-      <class name="testScripts.LoginTest">
-      <methods><include name="verifyWhetherUserIsAbleToLoginWithInvalidUsernameAndInvalidPassword"></include></methods>
+      <class name="testScripts.AdminUsersTest">
 </class>
 
     </classes>

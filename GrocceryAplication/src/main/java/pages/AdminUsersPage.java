@@ -32,46 +32,56 @@ public WebDriver driver;
 	////div[@class='alert alert-success alert-dismissible']
 	
 	
-	public void newButtonClick() {
+	public AdminUsersPage newButtonClick() {
 		newbutton.click();
+		return this;
 	}
 	
-	public void enterUserNameOnUserNameField(String usernamevalue1) {
+	public AdminUsersPage enterUserNameOnUserNameField(String usernamevalue1) {
 		username.sendKeys(usernamevalue1);
+		return this;
 	}
 	
-	public void enterPasswordOnPasswordField(String passwordvalue1) {
+	public AdminUsersPage enterPasswordOnPasswordField(String passwordvalue1) {
 		password.sendKeys(passwordvalue1);
+		return this;
 	}
 	
-	public void selectUserType() {
+	public AdminUsersPage selectUserType() {
 	    Select select = new Select(usertype);
 	    select.selectByIndex(2);   // Use the Select object
+	    return this;
 	}
 	
-	public void saveButtonClick() {
+	public AdminUsersPage saveButtonClick() {
 		savebutton.click();
+		return this;
 	}
 	
-	public void searchButtonClick() {
+	public AdminUsersPage searchButtonClick() {
 		searchbutton.click();
+		return this;
 	}
 	
-	public void usernameSearchButtonClick(String usernamevalue1) {
+	public AdminUsersPage usernameSearchButtonClick(String usernamevalue1) {
 		searchusername.sendKeys(usernamevalue1);
+		return this;
 	}
 	
-	public void searchUserTypeButton() {
+	public AdminUsersPage searchUserTypeButton() {
 		Select select = new Select(searchusertype);
 	    select.selectByIndex(2); 
+	    return this;
 	}
 	
-	public void submitButtonClick() {
+	public AdminUsersPage submitButtonClick() {
 		submitbutton.click();
+		return this;
 	}
 	
-	public void resetButtonClick() {
+	public AdminUsersPage resetButtonClick() {
 		resetbutton.click();
+		return this;
 	}
 
 	

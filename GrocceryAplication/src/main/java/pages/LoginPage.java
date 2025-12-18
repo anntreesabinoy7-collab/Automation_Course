@@ -24,14 +24,17 @@ public WebDriver driver;
 	
 	//h5[text()=" Alert!"]
 	
-	public void enterUserNameOnUserNameField(String usernamevalue) {
+	public LoginPage enterUserNameOnUserNameField(String usernamevalue) {
 		userName.sendKeys(usernamevalue);
+		return this;
 	}
-	public void enterPasswordOnPasswordField(String passwordvalue) {
+	public LoginPage enterPasswordOnPasswordField(String passwordvalue) {
 		password.sendKeys(passwordvalue);
+		return this;
 	}
-	public void loginButtonClick() {
+	public HomePage loginButtonClick() {
 		loginbutton.click();
+		return new HomePage(driver);
 	}
 	
 	public boolean isDashboardDisplayed() {

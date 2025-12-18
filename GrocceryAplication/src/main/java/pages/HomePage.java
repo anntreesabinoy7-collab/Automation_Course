@@ -24,12 +24,14 @@ public WebDriver driver;
 
 
     
-    public void logoutButtonClick() {
+    public HomePage logoutButtonClick() {
     	logoutbutton.click();
+    	return this;
     }
     
-    public void logoutClick() {
+    public LoginPage logoutClick() {
     	logout.click();
+    	return new LoginPage(driver);
     }
     
     public boolean isSignInDisplayed() {
@@ -37,12 +39,14 @@ public WebDriver driver;
     	
     }
     
-    public void moreInfoButtonClick() {
+    public AdminUsersPage adminUsersMoreInfoButtonClick() {
     	moreinfo.click();
+    	return new AdminUsersPage(driver);
     }
     
-    public void manageNewsButtonClick() {
+    public ManageNewsPage manageNewsButtonClick() {
 		moreinfobutton.click();
+		return new ManageNewsPage(driver);
 	}
 
 

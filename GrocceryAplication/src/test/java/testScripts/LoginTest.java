@@ -8,18 +8,19 @@ import org.testng.annotations.Test;
 
 import automationCore.Base;
 import constant.Constants;
+import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginTest extends Base {
+	HomePage home;
 	@Test(priority = 1,description = "Verify user can login with valid credentials",groups = {"smoke"})
 	public void verifyWhetherUserIsAbleToLoginWithValidcredentials() throws IOException {
 		 String usernamevalue=ExcelUtility.getStringData(0, 0, "Loginpage");
 		 String passwordvalue=ExcelUtility.getStringData(0, 1, "Loginpage");
 		 LoginPage loginPage=new LoginPage(driver);
-			loginPage.enterUserNameOnUserNameField(usernamevalue);
-			loginPage.enterPasswordOnPasswordField(passwordvalue);
-			loginPage.loginButtonClick();
+			loginPage.enterUserNameOnUserNameField(usernamevalue).enterPasswordOnPasswordField(passwordvalue);
+			home=loginPage.loginButtonClick();
 			boolean dashboardIsDisplayed = loginPage.isDashboardDisplayed();
 			Assert.assertTrue(dashboardIsDisplayed,Constants.VALIDCREDENTIALSERROR);
 		}
@@ -28,9 +29,7 @@ public class LoginTest extends Base {
 		 String usernamevalue=ExcelUtility.getStringData(1, 0, "Loginpage");
 		 String passwordvalue=ExcelUtility.getStringData(1, 1, "Loginpage");
 		 LoginPage loginPage=new LoginPage(driver);
-			loginPage.enterUserNameOnUserNameField(usernamevalue);
-			loginPage.enterPasswordOnPasswordField(passwordvalue);
-			loginPage.loginButtonClick();
+			loginPage.enterUserNameOnUserNameField(usernamevalue).enterPasswordOnPasswordField(passwordvalue).loginButtonClick();
 			
 			String expected ="Alert!";
 			String actual = loginPage.isAlertDisplayed();
@@ -42,9 +41,7 @@ public class LoginTest extends Base {
 		 String usernamevalue=ExcelUtility.getStringData(2, 0, "Loginpage");
 		 String passwordvalue=ExcelUtility.getStringData(2, 1, "Loginpage");
 		 LoginPage loginPage=new LoginPage(driver);
-			loginPage.enterUserNameOnUserNameField(usernamevalue);
-			loginPage.enterPasswordOnPasswordField(passwordvalue);
-			loginPage.loginButtonClick();
+			loginPage.enterUserNameOnUserNameField(usernamevalue).enterPasswordOnPasswordField(passwordvalue).loginButtonClick();
 			
 			boolean CloseButtonDisplayed=loginPage.isclosebuttondisplayed();
 			Assert.assertTrue(CloseButtonDisplayed,Constants.INVALIDUSERNAMEANDVALIDPASSWORD);
@@ -55,9 +52,7 @@ public class LoginTest extends Base {
 		 //String usernamevalue=ExcelUtility.getStringData(3, 0, "Loginpage");
 		 //String passwordvalue=ExcelUtility.getStringData(3, 1, "Loginpage");
 		 LoginPage loginPage=new LoginPage(driver);
-			loginPage.enterUserNameOnUserNameField(usernamevalue);
-			loginPage.enterPasswordOnPasswordField(passwordvalue);
-			loginPage.loginButtonClick();
+			loginPage.enterUserNameOnUserNameField(usernamevalue).enterPasswordOnPasswordField(passwordvalue).loginButtonClick();
 			boolean dashboard2IsDisplayed = loginPage.isdashboard2Displayed();
 			Assert.assertTrue(dashboard2IsDisplayed, Constants.INVALIDCREDENTIALSERROR);
 			

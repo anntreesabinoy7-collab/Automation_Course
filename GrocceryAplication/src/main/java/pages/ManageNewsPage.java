@@ -25,32 +25,38 @@ public WebDriver driver;
 	
 	   
     
-    public void newButtonClick() {
+    public ManageNewsPage newButtonClick() {
     	newbutton.click();
+    	return this;
     }
     
-    public void enterNews() {
+    public ManageNewsPage enterNews() {
     	newsbox.sendKeys("Election 2025");
+    	return this;
     }
 
-    public void saveButtonClick() {
+    public ManageNewsPage saveButtonClick() {
     	savebutton.click();
+    	return this;
     }
     
     public boolean isAlertDisplayed() {
     	return alert.isDisplayed();
     }
     
-    public void searchButtonClick() {
+    public ManageNewsPage searchButtonClick() {
     	search.click();
+    	return this;
     }
     
-    public void enterNewsTitle() {
+    public ManageNewsPage enterNewsTitle() {
     	titlebox.sendKeys("Election 2025");
+    	return this;
     }
     
-    public void searchSubmitClick() {
+    public ManageNewsPage searchSubmitClick() {
     	searchsubmit.click();
+    	return this;
     }
     
     public String getTheResult() {

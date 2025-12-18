@@ -13,24 +13,21 @@ import pages.ManageNewsPage;
 import utilities.ExcelUtility;
 
 public class ManageNewsTest extends Base{
+	HomePage home;
+	ManageNewsPage manageNews;
 	@Test
 	public void verifyWhetherTheUserIsAbleToAddANews() throws IOException {
 		 String usernamevalue=ExcelUtility.getStringData(0, 0, "Loginpage");
 		 String passwordvalue=ExcelUtility.getStringData(0, 1, "Loginpage");
 		 LoginPage loginPage=new LoginPage(driver);
-			loginPage.enterUserNameOnUserNameField(usernamevalue);
-			loginPage.enterPasswordOnPasswordField(passwordvalue);
-			loginPage.loginButtonClick();
+			loginPage.enterUserNameOnUserNameField(usernamevalue).enterPasswordOnPasswordField(passwordvalue);
+			home=loginPage.loginButtonClick();
 		 
-		 HomePage homepage = new HomePage(driver);
-		    homepage.manageNewsButtonClick();
+		    manageNews = home.manageNewsButtonClick();
 		 
-		 ManageNewsPage managenewspage = new ManageNewsPage(driver);
-		    managenewspage.newButtonClick();
-		    managenewspage.enterNews();
-		    managenewspage.saveButtonClick();
+		    manageNews.newButtonClick().enterNews().saveButtonClick();
 		    
-		    boolean alertIsDisplayed = managenewspage.isAlertDisplayed();
+		    boolean alertIsDisplayed = manageNews.isAlertDisplayed();
 			Assert.assertTrue(alertIsDisplayed,Constants.ADDNEWSERROR);
 
 }
@@ -39,20 +36,15 @@ public class ManageNewsTest extends Base{
 		 String usernamevalue=ExcelUtility.getStringData(0, 0, "Loginpage");
 		 String passwordvalue=ExcelUtility.getStringData(0, 1, "Loginpage");
 		 LoginPage loginPage=new LoginPage(driver);
-			loginPage.enterUserNameOnUserNameField(usernamevalue);
-			loginPage.enterPasswordOnPasswordField(passwordvalue);
-			loginPage.loginButtonClick();
+			loginPage.enterUserNameOnUserNameField(usernamevalue).enterPasswordOnPasswordField(passwordvalue);
+			home=loginPage.loginButtonClick();
 		 
-		 HomePage homepage = new HomePage(driver);
-		    homepage.manageNewsButtonClick();
+		    manageNews=home.manageNewsButtonClick();
 			
-	     ManageNewsPage managenewspage = new ManageNewsPage(driver);
-	        managenewspage.searchButtonClick();
-	        managenewspage.enterNewsTitle();
-	        managenewspage.searchSubmitClick();
+		    manageNews.searchButtonClick().enterNewsTitle().searchSubmitClick();
 	     
 	     String expected = "Election 2025";
-	     String actual = managenewspage.getTheResult();
+	     String actual = manageNews.getTheResult();
 	     Assert.assertEquals(actual, expected, Constants.ADDNEWSERROR);
    
 		
